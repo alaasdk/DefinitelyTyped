@@ -1,4 +1,4 @@
-// Type definitions for ssh2-sftp-client 4.1
+// Type definitions for ssh2-sftp-client 5.0.2
 // Project: https://github.com/theophilusx/ssh2-sftp-client
 // Definitions by: igrayson <https://github.com/igrayson>
 //                 Ascari Andrea <https://github.com/ascariandrea>
@@ -9,6 +9,7 @@
 //                 Lane Goldberg <https://github.com/builtbylane>
 //                 Lorenzo Adinolfi <https://github.com/loru88>
 //                 Sam Galizia <https://github.com/sgalizia>
+//                 Alaa Ali <https://github.com/alaasdk>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 import * as ssh2 from 'ssh2';
@@ -66,6 +67,11 @@ declare class sftp {
     on(event: string, callback: (...args: any[]) => void): void;
 
     removeListener(event: string, callback: (...args: any[]) => void): void;
+
+    downloadDir(srcDir: string, dstDir: string): Promise<string>;
+
+    uploadDir(srcDir: string, dstDir: string): Promise<string>;
+
 }
 
 declare namespace sftp {
